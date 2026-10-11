@@ -1,5 +1,100 @@
-<!doctype html><meta charset="utf-8"><head><title>rclone backup</title>
-<meta name="google-site-verification" content="v-89IRiFLtYtwm46o55BRSpwKDuVNp77g_F8KWJYCJs" /></head>
-<h1>rclone backup</h1>
-<p>Personal, non-public tool: nightly encrypted backup of a home server to the owner's own Google Drive, using rclone and restic.</p>
-<p><a href="privacy.html">Privacy policy</a> · Contact: 1303sbig@gmail.com</p>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<meta name="google-site-verification" content="v-89IRiFLtYtwm46o55BRSpwKDuVNp77g_F8KWJYCJs" />
+<title>Ergonomicon — Ergonomicon Backup</title>
+<!-- KEEP YOUR GOOGLE SEARCH CONSOLE LINE HERE: replace this comment with the
+     <meta name="google-site-verification" content="..."> line from your current index.html -->
+<meta name="description" content="Ergonomicon Backup: the off-site backup of Ergonomicon, a personal job-market research tool. Encrypted backups stored in the owner's own Google Drive.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head"><div class="in">
+  <a class="brand" href="index.html"><img src="logo.svg" alt="">Ergonomicon</a>
+  <nav aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="how-it-works.html">How it works</a><a href="security.html">Security</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="hero">
+  <div>
+    <div class="eyebrow">Ergonomicon &middot; personal project</div>
+    <h1>Ergonomicon Backup</h1>
+    <p class="lead">The off-site backup of Ergonomicon. Every night it stores an encrypted copy of
+    Ergonomicon&rsquo;s data in its owner&rsquo;s own Google Drive, so the data survives the loss of the
+    server it runs on.</p>
+  </div>
+  <img src="logo.svg" alt="Ergonomicon logo">
+</div>
+
+<section>
+  <h2>What Ergonomicon is</h2>
+  <div class="prose">
+  <p>Ergonomicon is a personal research tool built and run by Nicolas Gobet on a server in his home.
+  It collects public job postings from the career pages of medical-technology and pharmaceutical
+  companies, organises them into a taxonomy of roles and skills, and helps its owner follow the job
+  market in his field. Nobody else uses it, and it has no public interface.</p>
+  <p>Its data &mdash; hundreds of thousands of postings collected over time, many of which are no
+  longer online &mdash; cannot be collected again. That is why it needs a backup outside the house.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What Ergonomicon Backup does</h2>
+  <div class="grid">
+    <div class="card"><div class="ico">1</div><h3>Nightly upload</h3><p>At 05:30 the home server sends
+    the night&rsquo;s database backup and the archive of collected pages to one folder in the owner&rsquo;s Google Drive.</p></div>
+    <div class="card"><div class="ico">2</div><h3>Encrypted first</h3><p>Everything is encrypted on the home
+    server before it leaves. Google stores only encrypted data and cannot read it.</p></div>
+    <div class="card"><div class="ico">3</div><h3>Only what changed</h3><p>Data already uploaded is not sent
+    again, so a night costs a few hundred megabytes rather than the full database.</p></div>
+    <div class="card"><div class="ico">4</div><h3>Automatic retention</h3><p>7 daily, 4 weekly and 12 monthly
+    copies are kept; older ones are deleted from the backup folder.</p></div>
+    <div class="card"><div class="ico">5</div><h3>Weekly verification</h3><p>Every Sunday a sample of the stored
+    data is downloaded again and checked for integrity.</p></div>
+    <div class="card"><div class="ico">6</div><h3>Restore</h3><p>If the server is lost, the owner downloads the
+    files from the same folder and decrypts them on new hardware.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>How it uses Google user data</h2>
+  <div class="prose"><p>Ergonomicon Backup connects to exactly one Google account &mdash; its owner&rsquo;s &mdash;
+  and requests the narrowest Google Drive permission available.</p></div>
+  <div class="callout">
+  <h3>Google user data &mdash; in short</h3>
+  <dl>
+    <dt>Permission</dt><dd><code>drive.file</code>: access only to the files and folders Ergonomicon Backup creates itself.</dd>
+    <dt>Used to</dt><dd>create one backup folder in the owner&rsquo;s Google Drive, upload encrypted backup files into it, read them back to verify and restore, and delete expired ones.</dd>
+    <dt>Cannot see</dt><dd>any other file in the Drive, Gmail, contacts, calendar, photos, or profile data.</dd>
+    <dt>Shared with</dt><dd>nobody. Not sold, not used for advertising, not used to train models.</dd>
+  </dl>
+  <p style="margin:12px 0 0">Full details: <a href="privacy.html">privacy policy</a>.</p>
+</div>
+</section>
+
+<section>
+  <h2>Who can use it</h2>
+  <div class="prose">
+  <p>Only its owner. Ergonomicon Backup is not a public service: there is no sign-up, no account for anyone
+  else, and no download. This site exists to describe the tool transparently, as Google requires for
+  any application that uses Google&rsquo;s APIs.</p>
+  <p>Learn more: <a href="how-it-works.html">how it works</a> &middot; <a href="security.html">security</a>
+  &middot; <a href="faq.html">questions and answers</a>.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Nicolas Gobet &middot; <a href="mailto:1303sbig@gmail.com">1303sbig@gmail.com</a></p>
+</section>
+</main>
+<footer class="site-foot"><div class="in">
+  <span>&copy; 2026 Nicolas Gobet</span>
+  <a href="privacy.html">Privacy policy</a>
+  <a href="terms.html">Terms of service</a>
+  <a href="mailto:1303sbig@gmail.com">1303sbig@gmail.com</a>
+</div></footer>
+</body>
+</html>
