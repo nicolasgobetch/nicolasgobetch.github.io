@@ -1,0 +1,74 @@
+/* Ergonomicon site — one stylesheet for every page. */
+:root{
+  --ink:#12202a; --body:#34434e; --muted:#5f6d78; --rule:#d9e1e6;
+  --accent:#0f5c82; --accent-soft:#e3eef4; --mint:#2f9a7c; --mint-soft:#e2f3ee;
+  --bg:#f5f8fa; --card:#ffffff;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ink:#eaf1f4; --body:#c5d1d8; --muted:#8e9ca6; --rule:#26343c;
+    --accent:#6bb6dc; --accent-soft:#12303f; --mint:#7fd1b9; --mint-soft:#11302a;
+    --bg:#0c1419; --card:#131e24;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:16.5px/1.68 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code{overflow-wrap:anywhere;font-family:var(--mono);font-size:.88em;background:var(--accent-soft);color:var(--ink);padding:.1em .38em;border-radius:4px}
+
+/* header */
+.site-head{background:var(--card);border-bottom:1px solid var(--rule)}
+.site-head .in{max-width:980px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:8px}
+.site-head nav{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;font-size:15px}
+.site-head nav a{text-decoration:none;color:var(--body)}
+.site-head nav a:hover,.site-head nav a[aria-current]{color:var(--accent)}
+
+/* layout */
+main{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:32px;align-items:center}
+.hero img{width:160px;height:160px;border-radius:34px;box-shadow:0 10px 30px rgba(15,92,130,.25)}
+@media (max-width:640px){.hero{grid-template-columns:1fr}.hero img{width:96px;height:96px;border-radius:22px;order:-1}}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+h1{color:var(--ink);font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.02em;margin:8px 0 14px}
+h2{color:var(--ink);font-size:clamp(21px,3vw,27px);line-height:1.25;letter-spacing:-.01em;margin:0 0 12px}
+h3{color:var(--ink);font-size:17px;margin:0 0 6px}
+p{margin:0 0 12px}
+.lead{font-size:19px;color:var(--ink);max-width:62ch}
+section{padding:40px 0;border-top:1px solid var(--rule)}
+.prose{max-width:70ch}
+.prose ul,.prose ol{padding-left:22px}
+.prose li{margin-bottom:8px}
+
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:18px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
+.card .ico{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700;margin-bottom:10px;font-family:var(--mono)}
+.callout{background:var(--mint-soft);border:1px solid var(--rule);border-left:4px solid var(--mint);border-radius:0 10px 10px 0;padding:18px 20px;margin-top:18px}
+.callout dl{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 16px;margin:0}
+.callout dt{font-weight:600;color:var(--ink)}
+.callout dd{margin:0}
+@media (max-width:560px){.callout dl{grid-template-columns:1fr}.callout dt{margin-top:6px}}
+
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-size:15px;margin-top:16px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--accent-soft);color:var(--ink);font-weight:600}
+tr:last-child td{border-bottom:0}
+.tablewrap{overflow-x:auto}
+
+figure{margin:18px 0 0;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px}
+figure svg{display:block;width:100%;height:auto;color:var(--body)}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+
+details{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 18px;margin-top:10px}
+summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details p{margin:10px 0 0}
+
+.meta{color:var(--muted);font-size:14px}
+.site-foot{border-top:1px solid var(--rule);margin-top:40px}
+.site-foot .in{max-width:980px;margin:0 auto;padding:24px 20px 48px;display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.site-foot a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
